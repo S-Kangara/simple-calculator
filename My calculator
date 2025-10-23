@@ -1,0 +1,26 @@
+print("welcome to My Calculator!")
+
+# user inputs
+first_num = float(input("Enter Your First Number: "))
+operator = input("Enter operator(+ , - , * , / ): ")
+second_num = float(input("Enter Your Second Number: "))
+
+
+if operator == "+":
+    result = first_num + second_num
+elif operator == "-":
+    result = first_num - second_num  
+elif operator == "*":
+    result = first_num * second_num
+elif operator == "/":
+
+    # if the number devide by Zero
+    if second_num == 0:
+        result = "Error! Cannot divide by 0."
+    else:
+        result = first_num / second_num
+
+else:
+    result = "Invalid operator!"
+
+print("Result is:" , result)
