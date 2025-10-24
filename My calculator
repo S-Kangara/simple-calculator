@@ -1,26 +1,29 @@
-print("welcome to My Calculator!")
+print("=== Welcome to My Calculator ===")
 
-# user inputs
-first_num = float(input("Enter Your First Number: "))
-operator = input("Enter operator(+ , - , * , / ): ")
-second_num = float(input("Enter Your Second Number: "))
+try:
+    # user inputs
+    first_num = float(input("Enter your first number: "))
+    operator = input("Enter operator (+, -, *, /): ").strip()
+    second_num = float(input("Enter your second number: "))
 
-
-if operator == "+":
-    result = first_num + second_num
-elif operator == "-":
-    result = first_num - second_num  
-elif operator == "*":
-    result = first_num * second_num
-elif operator == "/":
-
-    # if the number devide by Zero
-    if second_num == 0:
-        result = "Error! Cannot divide by 0."
+    # calculate
+    if operator == "+":
+        result = first_num + second_num
+    elif operator == "-":
+        result = first_num - second_num
+    elif operator == "*":
+        result = first_num * second_num
+    elif operator == "/":
+        # handle division by zero
+        if second_num == 0:
+            result = "Error! Cannot divide by zero."
+        else:
+            result = first_num / second_num
     else:
-        result = first_num / second_num
+        result = "Invalid operator!"
 
-else:
-    result = "Invalid operator!"
+except ValueError:
+    result = "Invalid input! Please enter numbers only."
 
-print("Result is:" , result)
+# display output
+print("Result:", result)
